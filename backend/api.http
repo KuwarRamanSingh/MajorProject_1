@@ -1,0 +1,28 @@
+POST http://localhost:9090/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "rahul123",
+  "password": "123456",
+  "email": "rahul@gmail.com",
+  "name": "Rahul"
+}
+
+###
+
+POST http://localhost:9090/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "rahul@gmail.com",  
+  "password": "123456"
+}
+
+###
+
+GET http://localhost:9090/get_user_and_profile
+Content-Type: application/json
+
+{
+  "token": "df5bcc3037cecbbdda3af8f6f0069a3c0cfb5c365a88b3e076b830d9d770c077"
+}
