@@ -3,7 +3,7 @@ import DashboardLayout from '@/layout/DashboardLayout';
 import UserLayout from '@/layout/UserLayout';
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import { data } from 'react-router-dom';
+// import { data } from 'react-router-dom';
 import styles from "./index.module.css";
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
