@@ -85,7 +85,7 @@
         display: none;
      }
 
-     .mobileNavBar{display: flex;}
+     .mobileNavbar{display: flex;}
 
      .homeContainer_feedContainer {
         padding-bottom: 8vh;
