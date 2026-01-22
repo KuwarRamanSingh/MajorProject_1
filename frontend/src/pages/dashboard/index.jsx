@@ -20,8 +20,7 @@ export default function Dashboard() {
     const authState = useSelector((state) => state.auth)
 
     const postState = useSelector((state) => state.postReducer)
-
-
+   
 
 
     useEffect(() => {
@@ -36,6 +35,7 @@ export default function Dashboard() {
         }
 
     }, [authState.isTokenThere])
+
 
 
     const [postContent, setPostContent] = useState("");
@@ -185,16 +185,16 @@ export default function Dashboard() {
                     <div>
                          {postState.comments.map((comment, index)=> {
                             return (
-                               <div className={styles.singleComment} key={postComment._id}>
+                               <div className={styles.singleComment} key={comment._id}>
                                 <div className={styles.singleComment_profileContainer}>
-                                  <img src={`${BASE_URL}/${postComment.userId.profilePicture}`} alt="" />
+                                  <img src={`${BASE_URL}/${comment.userId.profilePicture}`} alt="" />
                                   <div>
-                                      <p style={{ fontWeight: "bold", fontSize: "1.2rem"}}>{postComment.userId.name}</p>
-                                      <p> @{postComment.userId.username}</p>
+                                      <p style={{ fontWeight: "bold", fontSize: "1.2rem"}}>{comment.userId.name}</p>
+                                      <p> @{comment.userId.username}</p>
                                       </div>
                                     </div>
                                     <p>
-                                        {postComment.body}
+                                        {comment.body}
                                       </p>  
                                     </div>  
                             )

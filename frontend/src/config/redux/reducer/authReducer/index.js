@@ -66,7 +66,7 @@ const authSlice = createSlice({
             state.isLoading = false;
             state.isError = false;
             state.isSuccess = true;
-            state.loggedIn = true;
+            state.loggedIn = false;   // isko maine true ki jagah false kiya coz maine ek cheez test karna hai which is related to change in code of login/index.js 
             state.message = {
                 message: "Registration is Successfull, Please login"
             }

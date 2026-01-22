@@ -157,15 +157,27 @@ export default function ViewProfilePage({userProfile}) {
 
 
 export async function getServerSideProps(context) {
-  // console.log(context.query.username)
+  try {
+    // console.log(context.query.username)
     const request = await clientServer.get("/user/get_profile_based_on_username", {
       params: {
         username: context.query.username
       }
     })
 
+    if (!request.data || !request.data.profile) {
+            return { notFound: true }; 
+        }
+
     const response = request.data;                                     //idhar se ek await hataya hu
     // console.log(response)
 
     return { props: { userProfile: request.data.profile } }
+  } catch(error) {
+    console.error("Profile Fetch Error:", error.message);
+        
+        // Agar Neha ka data delete ho gaya hai, toh ye line user ko 404 page dikha degi
+        return { notFound: true };
+  }
+
 }

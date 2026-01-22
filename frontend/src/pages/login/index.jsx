@@ -22,7 +22,7 @@ const [userLoginMethod, setUserLoginMethod] = useState(false);
   const [name, setName] = useState("");
 
   useEffect(() => {
-    if(authState.loggedIn) {
+    if(authState.loggedIn && localStorage.getItem("token")) {
       router.push("/dashboard")
     }
   }, [authState.loggedIn])
